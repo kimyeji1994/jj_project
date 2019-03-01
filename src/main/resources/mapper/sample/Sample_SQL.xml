@@ -18,7 +18,28 @@
         ]]>
     </select>
     
-		<insert id="insertBoard" parameterType="hashmap">
+    <insert id="insertFile" parameterType="hashmap">
+    <![CDATA[
+        INSERT INTO TB_FILE
+        (
+            BOARD_IDX,
+            ORIGINAL_FILE_NAME,
+            STORED_FILE_NAME,
+            FILE_SIZE,
+            CREA_ID
+        )
+        VALUES
+        (
+            #{BOARD_IDX},
+            #{ORIGINAL_FILE_NAME},
+            #{STORED_FILE_NAME},
+            #{FILE_SIZE},
+            'Admin'
+        )
+    ]]>
+</insert>
+    
+		<insert id="insertBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="IDX">
 		    <![CDATA[
 		        INSERT INTO TB_BOARD
 		        (
