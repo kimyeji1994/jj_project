@@ -40,6 +40,7 @@
                         <input type="hidden" id="IDX" value="${row.IDX }">
                         <a href="#this" name="file">${row.ORIGINAL_FILE_NAME }</a>
                         (${row.FILE_SIZE }kb)
+                        <p>
                     </c:forEach>
                 </td>
             </tr>
@@ -90,6 +91,7 @@
         comSubmit.setUrl("<c:url value='/common/downloadFile.do' />");
         comSubmit.addParam("IDX", idx);
         comSubmit.submit();
+        location.reload(true);
     }
 </script>
 

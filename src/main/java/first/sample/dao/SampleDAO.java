@@ -15,10 +15,11 @@ public class SampleDAO extends AbstractDAO{
 	    return (List<Map<String, Object>>)selectList("sample.selectFileList", map);
 	}
 
-    @SuppressWarnings("unchecked")
-    public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception{
-        return (List<Map<String, Object>>)selectList("sample.selectBoardList", map);
-    }
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> selectBoardList(Map<String, Object> map) throws Exception{
+	    return (Map<String, Object>)selectPagingList("sample.selectBoardList", map);
+	}
+
     
     public void insertFile(Map<String, Object> map) throws Exception{
         insert("sample.insertFile", map);
