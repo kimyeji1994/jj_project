@@ -84,13 +84,15 @@
         comSubmit.addParam("IDX", idx);
         comSubmit.submit();
     }
-     
+    //다중 다운로드 여기 수정
     function fn_downloadFile(obj){
         var idx = obj.parent().find("#IDX").val();
         var comSubmit = new ComSubmit();
+        
         comSubmit.setUrl("<c:url value='/common/downloadFile.do' />");
         comSubmit.addParam("IDX", idx);
         comSubmit.submit();
+        comSubmit.delParam(); //이거 수정1
         location.reload(true);
     }
 </script>
